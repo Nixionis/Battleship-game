@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battleship</title>
+    <script src="./main.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <p class="header__text">Battleship</p>
+      <p class="header__action player-action">
+        Place your large ship (Press R to rotate)
+      </p>
+    </div>
+    <div class="action"></div>
+    <main class="content">
+      <div class="content__wrap">
+        <div class="sidebar">
+          <h3 class="sidebar__title">Your ships</h3>
+          <ul class="sidebar__ship-list">
+            <li class="sidebar__ship" id="player-large">Large: 0</li>
+            <li class="sidebar__ship" id="player-big">Big: 0</li>
+            <li class="sidebar__ship" id="player-medium">Medium: 0</li>
+            <li class="sidebar__ship" id="player-small">Small: 0</li>
+          </ul>
+        </div>
+        <div class="grid" id="player-grid"></div>
+        <p class="content__versus">VS</p>
+        <div class="grid" id="enemy-grid"></div>
+        <div class="sidebar">
+          <h3 class="sidebar__title">Enemy ships</h3>
+          <ul class="sidebar__ship-list">
+            <li class="sidebar__ship" id="enemy-large">Large: 1</li>
+            <li class="sidebar__ship" id="enemy-big">Big: 2</li>
+            <li class="sidebar__ship" id="enemy-medium">Medium: 3</li>
+            <li class="sidebar__ship" id="enemy-small">Small: 4</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">Made by Nixion</p>
+      <p>
+        Images are from
+        <a
+          href="https://unsplash.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Unsplash</a
+        >
+      </p>
+    </footer>
+    <img
+      src="./assets/images/background.jpg"
+      alt="background image"
+      class="body__background"
+    />
+  </body>
+</html>

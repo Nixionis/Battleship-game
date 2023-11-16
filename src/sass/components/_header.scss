@@ -1,0 +1,26 @@
+@use "../globals/variables";
+
+.header {
+  margin-top: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 3rem;
+  color: variables.$text-color;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  &__action {
+    font-size: 2.4rem;
+  }
+
+  .player-action {
+    color: variables.$text-color-player-action;
+  }
+}

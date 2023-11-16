@@ -1,0 +1,18 @@
+@use "../globals/variables";
+
+.sidebar {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 12px;
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__ship-list {
+    list-style: none;
+  }
+
+  &__ship {
+    margin-bottom: 6px;
+  }
+}

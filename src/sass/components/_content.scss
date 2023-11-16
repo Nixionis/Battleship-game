@@ -1,0 +1,26 @@
+@use "../globals/variables";
+
+.content {
+  flex: 1;
+  margin: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.6rem;
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr auto;
+    align-content: center;
+    gap: 10px;
+
+    max-width: 1200px;
+  }
+
+  &__versus {
+    align-self: center;
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+}

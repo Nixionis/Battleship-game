@@ -1,0 +1,32 @@
+@use "../globals/variables";
+
+html {
+  color: variables.$text-color;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  position: relative;
+}
+
+.body__background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hide-display {
+  display: none !important;
+}
+
+.hide-opacity {
+  opacity: 0 !important;
+}

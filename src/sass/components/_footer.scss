@@ -1,0 +1,18 @@
+@use "../globals/variables";
+
+.footer {
+  background: rgba(0, 0, 0, 0.5);
+  color: variables.$text-color;
+
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 1.2rem !important;
+  padding: 10px;
+
+  a {
+    text-decoration: none;
+    color: rgb(150, 150, 235);
+  }
+}
