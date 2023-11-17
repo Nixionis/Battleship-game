@@ -4,6 +4,8 @@ Realization of battleship game.
 
 Player can play against ai with 10 ships on 10x10 map.
 
+![alt text](https://github.com/Nixionis/Battleship-game/blob/main/src/assets/images/rep.png?raw=true)
+
 ### Built With
 
 - ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
