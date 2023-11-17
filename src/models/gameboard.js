@@ -75,13 +75,19 @@ function newGameboard(boardSize) {
     if (boardShips.length === 0) {
       return 0;
     }
+    const resultShips = [0, 0, 0, 0];
 
-    let aliveCount = 0;
     for (let i = 0; i < boardShips.length; i += 1) {
-      if (!boardShips[i].isSunk()) aliveCount += 1;
+      if (!boardShips[i].isSunk())
+        resultShips[boardShips[i].getLength() - 1] += 1;
     }
 
-    return aliveCount;
+    return {
+      Large: resultShips[3],
+      Big: resultShips[2],
+      Medium: resultShips[1],
+      Small: resultShips[0],
+    };
   }
 
   function checkAdjacentCells(cellPositionX, cellPositionY) {
@@ -112,14 +118,18 @@ function newGameboard(boardSize) {
       const randomY = Math.floor(Math.random() * BOARD_SIZE);
       const randomRotate =
         Math.floor(Math.random() * 2) + 1 === 1 ? true : false;
-      const success = tryPlaceShip(
-        buildQueue[buildQueue.length - 1],
-        randomX,
-        randomY,
-        randomRotate
-      );
+      let success = false;
 
-      if (success) buildQueue.pop();
+      for (let i = 0; i < buildQueue[buildQueue.length - 1]; i += 1) {
+        const checkX = randomRotate ? randomX : randomX + i;
+        const checkY = randomRotate ? randomY + i : randomY;
+        success = checkAdjacentCells(checkX, checkY);
+
+        if (!success) break;
+      }
+
+      if (success)
+        tryPlaceShip(buildQueue.pop(), randomX, randomY, randomRotate);
     }
   }
 

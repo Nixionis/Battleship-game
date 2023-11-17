@@ -38,7 +38,7 @@
   }
 
   &__cell.empty {
-    background-color: rgba(155, 155, 155, 0.75);
+    background-color: rgba(155, 155, 155, 0.75) !important;
   }
 
   &__cell.invalid {
@@ -49,7 +49,7 @@
     background-color: rgba(155, 255, 155, 0.75) !important;
   }
 
-  &__cell.enemy-ship {
-    background-color: rgba(255, 155, 155, 0.75);
+  &__cell.damaged-ship {
+    background-color: rgba(255, 155, 155, 0.75) !important;
   }
 }

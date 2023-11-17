@@ -136,6 +136,42 @@ function createDOMController(doc) {
     }
   }
 
+  function setActionText(message, type) {
+    actionText.textContent = message;
+
+    actionText.classList.remove("info");
+    actionText.classList.remove("player-turn");
+    actionText.classList.remove("enemy-turn");
+
+    actionText.classList.add(
+      type === 0 ? "info" : type === 1 ? "player-turn" : "enemy-turn"
+    );
+  }
+
+  function markCell(positionX, positionY, markType, forPlayer) {
+    const markTypes = {
+      0: "Empty",
+      1: "Damaged-ship",
+    };
+
+    const currentCell = forPlayer
+      ? playerGrid.querySelector(
+          `.grid__cell[data-position-x="${positionX}"][data-position-y="${positionY}"]`
+        )
+      : enemyGrid.querySelector(
+          `.grid__cell[data-position-x="${positionX}"][data-position-y="${positionY}"]`
+        );
+
+    if (!currentCell) return;
+    if (markTypes[markType] === "Empty") {
+      currentCell.classList.add("empty");
+    } else if (markTypes[markType] === "Damaged-ship") {
+      currentCell.classList.add("damaged-ship");
+    }
+
+    currentCell.innerHTML = '<span class="material-icons-round"> close </span>';
+  }
+
   return {
     subscribeToCellClick,
     subscribeToCellHover,
@@ -143,6 +179,8 @@ function createDOMController(doc) {
     showPlacement,
     placeShipForPlayer,
     updateShipScore,
+    setActionText,
+    markCell,
   };
 }
 

@@ -11,7 +11,7 @@ describe("Gameboard creation and test", () => {
     expect(myGameboard.tryPlaceShip(3, 0, 0, false)).toBe(false);
   });
 
-  test("Check to place big ship in invalid place (adjacent to antoher ship)", () => {
+  test("Check to place big ship in invalid place (adjacent to another ship)", () => {
     const placeX = 1;
     const placeY = 1;
     let result = false;
@@ -41,10 +41,20 @@ describe("Gameboard creation and test", () => {
 
   test("Shot at small ship and get ship left amount", () => {
     expect(myGameboard.tryPlaceShip(1, 2, 2, true)).toBe(true);
-    expect(myGameboard.getShipAliveAmount()).toBe(2);
+    expect(myGameboard.getShipAliveAmount()).toEqual({
+      Large: 1,
+      Big: 0,
+      Medium: 0,
+      Small: 1,
+    });
 
     const armor = myGameboard.receiveAttack(2, 2);
     expect(armor).toBe(0);
-    expect(myGameboard.getShipAliveAmount()).toBe(1);
+    expect(myGameboard.getShipAliveAmount()).toEqual({
+      Large: 1,
+      Big: 0,
+      Medium: 0,
+      Small: 0,
+    });
   });
 });
